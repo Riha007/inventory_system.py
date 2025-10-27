@@ -68,6 +68,38 @@ Overall, the code is now more **secure, readable, and professional**.
 
 ---
 
+---
+
+##  Learnings and Future Applications
+
+### **Key Learnings from the Lab**
+- Understood how **static code analysis** tools automatically detect potential security risks, coding errors, and violations of best practices.
+- Learned the purpose and usage of tools like:
+  - **Bandit** for identifying security vulnerabilities.
+  - **Pylint** for maintaining code quality and consistency.
+  - **Flake8** for enforcing PEP8 styling and readability.
+- Realized how **small issues** (like using `eval()` or bare `except:`) can create **major security or logical flaws**.
+- Improved understanding of **safe coding techniques**, including:
+  - Using `with open()` for file handling.
+  - Avoiding mutable default arguments (`[]`, `{}`).
+  - Writing clear and descriptive docstrings.
+- Gained hands-on experience in **interpreting tool reports**, understanding severity levels, and applying fixes accordingly.
+- Learned to maintain **consistent naming conventions (snake_case)** and follow Python’s **PEP8 standards**.
+
+---
+
+### **Future Applications of These Learnings**
+- Integrate **static analysis tools** like Bandit, Pylint, and Flake8 into larger projects for continuous monitoring of code quality.
+- Use **pre-commit hooks** or **GitHub Actions CI/CD pipelines** to automatically run these tools before pushing code.
+- Apply similar analysis and secure coding principles in **web development** (Node.js, React backends) or **Python-based projects**.
+- Use insights from this lab to write **cleaner, more secure, and maintainable code** in future academic or professional projects.
+- Encourage **team collaboration** by standardizing code review checklists based on issues commonly flagged by these tools.
+- Build awareness of **software security practices** early in the development lifecycle to prevent vulnerabilities before deployment.
+
+---
+
+
+
 ## ⚙️ How to Run the Fixed Code
 
 #### ** Clone or open the repository**
