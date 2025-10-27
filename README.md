@@ -1,4 +1,4 @@
-# 🧩 Lab 5 — Static Code Analysis
+# Lab 5 — Static Code Analysis
 
 This repository contains the cleaned and updated version of `inventory_system.py` after performing static code analysis using **Pylint**, **Bandit**, and **Flake8**.  
 The purpose of this lab was to identify, understand, and fix coding, security, and style issues in the given Python script.
@@ -19,10 +19,10 @@ The purpose of this lab was to identify, understand, and fix coding, security, a
 
 | No. | Issue Description | Tool Used | Original Code | Fix Applied | Severity |
 |-----|-------------------|------------|----------------|--------------|-----------|
-| 1 | **Use of `eval()` – potential code injection vulnerability** | Bandit | `eval("print('eval used')")` | Removed the `eval()` line completely and replaced it with a safe `print()` statement. | 🔴 **High** |
+| 1 | **Use of `eval()` – potential code injection vulnerability** | Bandit | `eval("print('eval used')")` | Removed the `eval()` line completely and replaced it with a safe `print()` statement. |  **High** |
 | 2 | **Bare `except:` block silently ignored all errors** | Bandit / Flake8 | ```python\nexcept:\n    pass``` | Changed to `except KeyError:` with a clear error message. |  **High** |
-| 3 | **Mutable default argument (`logs=[]`) can lead to shared state bugs** | Pylint | `def add_item(item="default", qty=0, logs=[])` | Replaced with `logs=None` and initialized inside the function (`if logs is None: logs = []`). | 🔴 **High** |
-| 4 | **Files opened without context manager or encoding** | Pylint | `f = open(file, "r")` / `f = open(file, "w")` | Used `with open(file, "r", encoding="utf-8") as f:` and `with open(file, "w", encoding="utf-8") as f:` for safe file handling. | 🔴 **High** |
+| 3 | **Mutable default argument (`logs=[]`) can lead to shared state bugs** | Pylint | `def add_item(item="default", qty=0, logs=[])` | Replaced with `logs=None` and initialized inside the function (`if logs is None: logs = []`). |  **High** |
+| 4 | **Files opened without context manager or encoding** | Pylint | `f = open(file, "r")` / `f = open(file, "w")` | Used `with open(file, "r", encoding="utf-8") as f:` and `with open(file, "w", encoding="utf-8") as f:` for safe file handling. |  **High** |
 | 5 | **Function names not in snake_case** | Pylint | `addItem`, `removeItem`, `saveData`, etc. | Renamed to `add_item`, `remove_item`, `save_data`, etc., following PEP8 naming standards. |  **Medium** |
 | 6 | **Missing module and function docstrings** | Pylint | Functions had no descriptions. | Added a module docstring at the top and short descriptive docstrings for each function. |  **Medium** |
 | 7 | **Unused import** | Flake8 | `import logging` | Removed the unused import line. |  **Low** |
